@@ -20,7 +20,9 @@ def create_app(config_class=Config):
     mail.init_app(app)
 
     from flaskbase.main.routes import main
+    from flaskbase.users.routes import users
     
     app.register_blueprint(main)
+    app.register_blueprint(users)
 
     return app

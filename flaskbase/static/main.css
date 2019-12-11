@@ -1,0 +1,70 @@
+body {
+    font-family: 'Exo', sans-serif;
+    font-size: 15px;
+}
+
+footer 
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .green 
+{
+    color: #67BA7B;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .green
+{
+    color: #67BA7B;
+}
+
+nav .navbar-brand .gray
+{
+    color: #606060;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+    font-size: 15px;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.content-section {
+    border: 1px solid #606060;
+    padding: 15px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+}
+

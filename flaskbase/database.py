@@ -11,5 +11,5 @@ DBSession = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 session = DBSession()
 
 def init_db():
-    from models import User, Post
+    from flaskbase.models import User
     Base.metadata.create_all(bind=engine)

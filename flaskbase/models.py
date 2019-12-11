@@ -20,7 +20,6 @@ class User(Base, UserMixin):
     image_file = Column(String(20), nullable=False, default='default.jpg')
     password = Column(String(60), nullable=False)
     confirmed_email = Column(Boolean, nullable=False, default=False,)
-    posts = relationship('Post', backref='author', lazy=True)
 
     def get_confirm_token(self, expires_sec=3600):
         s = Serializer(current_app.config['SECRET_KEY'], expires_sec)

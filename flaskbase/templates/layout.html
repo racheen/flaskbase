@@ -11,9 +11,12 @@
         <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="/static/racheen.ico" rel="icon">
+        <!-- link font Exo-->
+        <link href="https://fonts.googleapis.com/css?family=Exo:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-        <link href="/static/styles.css" rel="stylesheet">
+        <link href="../static/racheen.ico" rel="icon">
+
+        <link href="../static/main.css" rel="stylesheet">
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -26,14 +29,18 @@
     <body>
 
         <nav class="navbar navbar-expand-md navbar-light bg-light border">
-            <a class="navbar-brand" href="/">Final Project</a>
+            <a class="navbar-brand" href="/"><span class="green">Final Project</span></a>
             <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ml-auto mt-2">
-                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                <ul class="navbar-nav ml-auto mt-2">    
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('users.logout') }}">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('users.register') }}">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('users.login') }}">Log In</a></li>
+                {% endif %} 
                 </ul>
             </div>
         </nav>
@@ -51,7 +58,7 @@
         </main>
 
         <footer class="small text-center text-muted">
-            Racheen
+            <div class="green">&#9400 2019 Racheen</div>
         </footer>
 
     </body>
