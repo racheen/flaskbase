@@ -7,7 +7,7 @@ Base = declarative_base()
 
 engine = create_engine(Config.DATABASE_URI)
 Base.metadata.bind = engine
-DBSession = sessionmaker(autocommit=False,autoflush=False,bind=engine)
+DBSession = sessionmaker(autocommit=True,autoflush=False,bind=engine)
 session = DBSession()
 
 def init_db():
